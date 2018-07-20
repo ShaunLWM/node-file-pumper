@@ -1,33 +1,30 @@
-[file-pumper](https://www.npmjs.com/package/node-file-pumper)
-
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 
 ## Installation
 
 ```sh
-$ npm install -g node-file-pumper
+$ npm install node-file-pumper
 ```
 
 ```sh
-$ yarn global add node-file-pumper
+$ yarn add node-file-pumper
 ```
 
 ## Quick Start
 
-Create 1mb file
+Create a 5mb file in current directory
 
 ```bash
-$ pump --file=test.exe --size=1 --type=mb
+let pump = require('node-file-pumper');
+pump("./test.exe", 5, "mb", (error) => {
+    if (error) {
+        return console.log(error);
+    }
+
+    console.log("done");
+})
 ```
-
-## Command Line Options
-
-        --version        output the version number
-    -f, --file           file name to generate
-    -s, --size           (int) file size
-    -v, --type <mb|kb>   file size in kb or mb
-    -h, --help           output usage information
 
 ## License
 
